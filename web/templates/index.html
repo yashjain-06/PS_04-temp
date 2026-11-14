@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="layout">
+  <section class="stage">
+    <canvas id="grid" width="800" height="400" aria-label="Swarm construction grid"></canvas>
+    <div class="legend">
+      <span><i class="sw ghost"></i>Blueprint (target)</span>
+      <span><i class="sw block"></i>Built block</span>
+      <span><i class="sw depot"></i>Depot</span>
+      <span><i class="sw rock"></i>Barrier</span>
+      <span><i class="sw seek"></i>Seek</span>
+      <span><i class="sw carry"></i>Carry</span>
+      <span><i class="sw place"></i>Place</span>
+      <span><i class="sw return"></i>Return</span>
+      <span><i class="sw failed"></i>Failed</span>
+    </div>
+  </section>
+
+  <aside class="panel">
+    <h2>Controls</h2>
+    <label>Blueprint <select id="blueprint"></select></label>
+    <label>Agents: <b id="nAgentsVal">10</b>
+      <input id="nAgents" type="range" min="1" max="50" value="10"></label>
+    <label>Failure rate: <b id="failVal">0</b>%
+      <input id="failRate" type="range" min="0" max="50" step="5" value="0"></label>
+    <label>Fail at tick <input id="failAt" type="number" min="1" value="15"></label>
+    <label>Seed <input id="seed" type="number" value="42"></label>
+    <label>Speed: <b id="speedVal">10</b> ticks/s
+      <input id="speed" type="range" min="1" max="60" value="10"></label>
+    <label class="row"><input id="useAco" type="checkbox"> Use ACO routes</label>
+    <label class="row"><input id="usePso" type="checkbox"> PSO depot placement</label>
+    <label class="row"><input id="showTraffic" type="checkbox"> Traffic heatmap</label>
+    <label class="row"><input id="showPher" type="checkbox" checked> Pheromone</label>
+    <div class="buttons">
+      <button id="btnStart" class="primary">Start</button>
+      <button id="btnPause">Pause</button>
+      <button id="btnStep">Step</button>
+      <button id="btnReset">Reset</button>
+    </div>
+
+    <h2>Metrics</h2>
+    <table class="metrics">
+      <tr><td>Tick</td><td id="mTick">-</td></tr>
+      <tr><td>Accuracy</td><td id="mAcc">-</td></tr>
+      <tr><td>Blocks placed</td><td id="mPlaced">-</td></tr>
+      <tr><td>Active / failed</td><td id="mAgents">-</td></tr>
+      <tr><td>Blocked ticks</td><td id="mBlocked">-</td></tr>
+      <tr><td>Efficiency</td><td id="mEff">-</td></tr>
+      <tr><td>Status</td><td id="mStatus">idle</td></tr>
+    </table>
+    <p class="note" id="modelNote"></p>
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api_client.js') }}"></script>
+<script src="{{ url_for('static', filename='js/grid_canvas.js') }}"></script>
+<script src="{{ url_for('static', filename='js/controls.js') }}"></script>
+{% endblock %}

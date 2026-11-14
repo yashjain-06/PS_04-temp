@@ -1,0 +1,33 @@
+{
+ "rows": 144,
+ "model": "GradientBoostingRegressor on log(build_time)",
+ "held_out_seed": {
+  "gbr": {
+   "r2": 0.939,
+   "mae_ticks": 25.3,
+   "n": 36
+  },
+  "ridge_baseline": {
+   "r2": 0.899,
+   "mae_ticks": 30.8
+  },
+  "predict_mean_baseline_mae": 98.1
+ },
+ "leave_one_blueprint_out": {
+  "simple_wall": {
+   "r2": 0.678,
+   "mae_ticks": 30.3,
+   "n": 48
+  },
+  "u_shape": {
+   "r2": -0.189,
+   "mae_ticks": 162.5,
+   "n": 48
+  },
+  "wall_with_opening": {
+   "r2": 0.461,
+   "mae_ticks": 30.9,
+   "n": 48
+  }
+ }
+}

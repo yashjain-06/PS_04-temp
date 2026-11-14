@@ -1,0 +1,6 @@
+# Scaling study: how build time and efficiency change with agent count (baseline vs ACO).
+blueprints: [blueprints/wall_with_opening.json]
+agent_counts: [10, 20, 30, 50]
+seeds: [1, 2, 3, 4, 5]
+failure_rate: 0.0
+use_aco: [false, true]

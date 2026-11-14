@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}ML insights{% endblock %}
+{% block content %}
+<div class="stage">
+  <h2>ML insights: predicted build time and a suggested swarm size</h2>
+  <label>Blueprint <select id="bp"></select></label>
+  <p class="note" id="err"></p>
+  <div class="badges" id="rec"></div>
+  <canvas id="cPred"></canvas>
+  <h3>How accurate is it?</h3>
+  <div class="scroll"><table class="metrics wide" id="rep"></table></div>
+  <p class="note">The surrogate is an offline analysis tool trained on this project's own simulation runs; it never controls a robot,
+  so the swarm stays decentralised. It is reliable for the blueprints it was trained on and unreliable on completely new ones (see the last rows).</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api_client.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/insights.js') }}"></script>
+{% endblock %}

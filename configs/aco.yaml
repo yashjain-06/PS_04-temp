@@ -1,0 +1,12 @@
+# Ant Colony Optimisation (M3). Ants use a short tabu list + 10% exploration and loop erasure.
+# Tuned on the barrier-with-gap site: ~1.0-1.03x the optimal route length with no A* fallbacks.
+n_ants: 10
+n_iter: 8
+alpha: 1.0
+beta: 3.0
+rho: 0.3
+q: 10.0
+early_stop: true
+max_len_factor: 6.0
+epsilon: 0.1
+tabu: 6

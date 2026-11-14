@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.pytest_cache/
+.DS_Store
+blueprints/uploads/*
+!blueprints/uploads/.gitkeep
+models/*.joblib
+models/*.zip
+results/raw/*
+results/media/*
+!results/raw/.gitkeep
+!results/media/.gitkeep

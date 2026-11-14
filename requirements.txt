@@ -1,0 +1,12 @@
+# Python 3.10 or 3.11. The model is plain Python (no Mesa).
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.9.2
+pyyaml==6.0.2
+flask==3.0.3
+imageio==2.35.1
+pillow==10.4.0
+scikit-learn==1.5.2
+joblib==1.4.2
+gunicorn==22.0.0; sys_platform != "win32"
+pytest==8.3.3

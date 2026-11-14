@@ -1,0 +1,7 @@
+# Failure study: slowdown when a share of robots dies mid-build (fail_at_tick ~ half the 0%-failure build time).
+blueprints: [blueprints/wall_with_opening.json]
+n_agents: 30
+failure_rates: [0.0, 0.1, 0.3]
+fail_at_tick: 40
+seeds: [1, 2, 3, 4, 5]
+use_aco: false          # set true to repeat with ACO routes (about 10x more CPU time)

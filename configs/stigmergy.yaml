@@ -1,0 +1,4 @@
+# Pheromone markers left by robots that place a block (M2).
+deposit: 1.0          # added on the placer's cell and its walkable neighbours
+evaporation: 0.05     # fraction lost per tick
+threshold: 0.08       # robots only react to pheromone above this level

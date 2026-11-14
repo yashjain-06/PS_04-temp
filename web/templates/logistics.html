@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Logistics{% endblock %}
+{% block content %}
+<div class="stage">
+  <h2>Material logistics: naive baseline vs Ant Colony Optimisation</h2>
+  <label>Blueprint <select id="bp"></select></label>
+  <p class="note" id="err"></p>
+  <div class="cols">
+    <div><h3>Baseline (straight line, ignores the barrier)</h3><canvas id="cBase"></canvas></div>
+    <div><h3>ACO (ants reinforce shorter routes)</h3><canvas id="cAco"></canvas></div>
+  </div>
+  <p class="note" id="caption"></p>
+  <div class="scroll"><table class="metrics wide" id="stats"></table></div>
+  <h3>ACO convergence (route length / optimal, averaged over sampled depot-to-site pairs)</h3>
+  <canvas id="cConv"></canvas>
+  <p class="note">Baseline routes are planned without knowing about the barrier, so robots must detour locally.
+  Build-time effects of this are measured on the Experiments page (ACO on/off).</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api_client.js') }}"></script>
+<script src="{{ url_for('static', filename='js/grid_canvas.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/logistics.js') }}"></script>
+{% endblock %}

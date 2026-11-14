@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Blueprint editor{% endblock %}
+{% block content %}
+<div class="layout">
+  <section class="stage">
+    <canvas id="ed" width="800" height="400" aria-label="Blueprint drawing grid"></canvas>
+    <p class="note">Click or drag to paint. Targets are the blocks to build; rocks block movement; depots are where robots pick up blocks.</p>
+  </section>
+  <aside class="panel">
+    <h2>Editor</h2>
+    <label>Load existing <select id="load"><option value="">(blank)</option></select></label>
+    <label>Width <input id="w" type="number" min="4" max="40" value="24"></label>
+    <label>Height <input id="h" type="number" min="4" max="40" value="12"></label>
+    <div class="buttons" id="tools">
+      <button data-tool="target" class="primary">Target</button><button data-tool="rock">Rock</button>
+      <button data-tool="depot">Depot</button><button data-tool="erase">Erase</button>
+    </div>
+    <label>Name <input id="name" type="text" value="my_blueprint" maxlength="40"></label>
+    <div class="buttons"><button id="btnValidate">Validate</button><button id="btnSave" class="primary">Save &amp; simulate</button></div>
+    <p class="note" id="msg"></p>
+  </aside>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/api_client.js') }}"></script>
+<script src="{{ url_for('static', filename='js/blueprint_editor.js') }}"></script>
+{% endblock %}

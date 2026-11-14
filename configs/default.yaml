@@ -1,0 +1,21 @@
+# Shared defaults. Experiment configs override these. aco.yaml and stigmergy.yaml are merged in by load_config().
+sensing:
+  radius: 2           # robots observe only a radius-r (Chebyshev) neighbourhood
+simulation:
+  seed: 42
+  max_ticks: 3000
+  n_agents: 10
+  blueprint: blueprints/wall_with_opening.json
+agents:
+  load_time: 1        # ticks a robot spends at a depot loading a block
+  patience: 4         # ticks a higher-priority robot waits before backing off
+logistics:
+  use_aco: false      # false = baseline routes
+  baseline: straight  # straight | random
+failure:
+  rate: 0.0           # share of agents disabled
+  at_tick: 100
+web:
+  host: 127.0.0.1
+  port: 5000
+  steps_per_second: 10

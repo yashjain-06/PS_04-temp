@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Experiments{% endblock %}
+{% block content %}
+<div id="empty" class="stage" hidden>
+  <h2>No results yet</h2>
+  <p>Run the experiments, then reload:</p>
+  <pre>python scripts/run_all_experiments.py</pre>
+</div>
+<div id="content" class="stage">
+  <h2>Experiments</h2>
+  <div id="badges" class="badges"></div>
+  <div class="charts">
+    <figure><figcaption>Build time vs agents (error bars: 95% CI)</figcaption><canvas id="cTime"></canvas></figure>
+    <figure><figcaption>Efficiency vs agents</figcaption><canvas id="cEff"></canvas></figure>
+    <figure><figcaption>Slowdown under failures</figcaption><canvas id="cSlow"></canvas></figure>
+    <figure><figcaption>Build time vs failure rate</figcaption><canvas id="cFail"></canvas></figure>
+  </div>
+  <div class="scroll"><table id="tbl" class="metrics wide"></table></div>
+  <p class="note">Each point averages several random seeds. Slowdown = build time with failures / build time at 0% failure.</p>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/experiments.js') }}"></script>
+{% endblock %}

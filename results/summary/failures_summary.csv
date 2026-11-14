@@ -1,0 +1,4 @@
+blueprint,n_agents,fail_rate,use_aco,n_runs,completed_rate,exact_rate,build_time_mean,build_time_std,build_time_ci95,accuracy_mean,accuracy_std,accuracy_ci95,efficiency_mean,efficiency_std,efficiency_ci95,blocked_ticks_mean,blocked_ticks_std,blocked_ticks_ci95,slowdown
+wall_with_opening,30,0.0,False,5,1.0,1.0,112.0,32.7567,40.6663,1.0,0.0,0.0,0.0032,0.0008,0.001,819.6,116.4079,144.5163,1.0
+wall_with_opening,30,0.1,False,5,1.0,1.0,119.2,34.5861,42.9375,1.0,0.0,0.0,0.0032,0.0008,0.0009,776.2,131.3038,163.0091,1.064
+wall_with_opening,30,0.3,False,5,1.0,1.0,144.4,42.3946,52.6314,1.0,0.0,0.0,0.0031,0.0007,0.0009,721.8,66.1377,82.1077,1.289
